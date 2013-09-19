@@ -1,0 +1,29 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = 'info.wahlman.stupidproxy.StupidProxy'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+}
+
+List compileLibraries = [
+        "org.eclipse.jetty:jetty-server:9.0.5.v20130815",
+        "org.codehaus.groovy.modules.http-builder:http-builder:0.5.2"
+]
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.1.7'
+    compile compileLibraries
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src'
+        }
+    }
+}
