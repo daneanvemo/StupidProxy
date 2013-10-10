@@ -11,7 +11,7 @@ ext {
 }
 
 List compileLibraries = [
-        "org.eclipse.jetty:jetty-server:9.0.5.v20130815",
+        "org.eclipse.jetty:jetty-server:8.1.12.v20130726",
         "org.codehaus.groovy.modules.http-builder:http-builder:0.5.2"
 ]
 
