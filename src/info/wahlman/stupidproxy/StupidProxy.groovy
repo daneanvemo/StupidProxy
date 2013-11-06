@@ -39,7 +39,7 @@ class StupidProxy extends AbstractHandler {
         Method method = Method.find { it.toString() ==  requestParam.method } as Method
         Map<String, String> headerMap = new HashMap<>()
         requestParam.headerNames.each {
-            if (it.toLowerCase().startsWith("postman-")) {
+            if (!it.toLowerCase().equals("postman-content-length") && it.toLowerCase().startsWith("postman-")) {
                 headerMap.put(it.substring("postman-".length()), requestParam.getHeader(it))
             } else {
                 headerMap.put(it, requestParam.getHeader(it))
